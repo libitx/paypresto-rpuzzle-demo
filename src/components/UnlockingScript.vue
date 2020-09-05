@@ -159,7 +159,7 @@ export default {
               .signTxIn(1, { keyPair: payment.keyPair })
               .pushTx()
           })
-          .on('success', txid => {
+          .on('success', ({ txid }) => {
             console.log('unlocking script pushed')
             this.store.unlockingTXID = txid
             this.store.status = 3

@@ -93,7 +93,7 @@ export default {
             console.log('locking script funded')
             payment.pushTx()
           })
-          .on('success', txid => {
+          .on('success', ({ txid }) => {
             console.log('locking script pushed')
             this.store.lockingTXID = txid
             this.store.lockingUTXO = {
